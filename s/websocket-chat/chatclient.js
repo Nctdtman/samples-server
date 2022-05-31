@@ -17,6 +17,12 @@ function connect() {
   var serverUrl;
   var scheme = "ws";
 
+  // If have been a connection, need to close the connection
+  
+  if (connection) {
+    connection.close();
+  }
+  
   // If this is an HTTPS connection, we have to use a secure WebSocket
   // connection too, so add another "s" to the scheme.
 
